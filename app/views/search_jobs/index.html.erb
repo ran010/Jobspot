@@ -3,22 +3,18 @@
 	<div class="container text-center">
 		<h1 class="title">Easiest Step Towards Your New Job</h1>
 		<h3>We offer different jobs vacancy</h3>
+    <% if @quote.present? %>
+      <h3><%= @quote["quote"] %></h3>
+      <h4>- <%= @quote["author"] %></h4>
+    <% end %>
 		<div class="banner-form">
       <%= form_tag(root_path, :method => "get") do %>
 				<%= search_field_tag :search, params[:search], placeholder: "Search", :required => true, class: "form-control" %>
         <%= button_tag "Search", :class => 'btn btn-primary'%>
         <% end %>
-
-		</div><!-- banner-form -->
-
-		<!-- <ul class="banner-socail list-inline">
-			<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-			<li><a href="#" title="Youtube"><i class="fa fa-youtube"></i></a></li>
-		</ul><!-- banner-socail -->
-	</div><!-- container -->
-</div><!-- banner-section -->
+		</div>
+	</div>
+</div>
 
 <div class="page">
 	<%= render 'shared/job_post_details' %>

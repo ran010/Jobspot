@@ -1,15 +1,8 @@
 <section>
   <div class="container">
-
     <div class="job-details">
       <div class="section job-ad-item">
         <div class="item-info">
-          <div class="item-image-box">
-            <!-- <div class="item-image">
-              <img src="images/job/4.png" alt="Image" class="img-responsive">
-            </div><!-- item-image -->
-          </div>
-
           <div class="ad-info">
             <span class="title"><%= @job_post.job_title %></span>
             <div class="ad-meta">
@@ -77,10 +70,10 @@
 
                   <% if @job_post.job_skills.present? %>
                     <% @job_post.job_skills.each do |f| %>
-                      <h5><%= f.skill.name %> <h5>
+                      <h5><%= f.skill.name %> </h5>
                     <% end %>
                   <% end %>
-              </div><!-- educational-background -->
+              </div>
             </div>
           </div>
 

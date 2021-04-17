@@ -10,5 +10,6 @@ class SearchJobsController < ApplicationController
       @job_posts = JobPost.fuzzy_search(params[:search]).paginate(:page => params[:page],
                                                                   :per_page => 10)
     end
+    @quote = QuoteApiService.call
   end
 end

@@ -14,7 +14,6 @@
       <!-- user-login -->
       <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
         <%= form_for @seeker_profile do |f| %>
-
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="find-job">
               <div class="form-group">
@@ -45,14 +44,12 @@
                   <%= link_to_add_fields "Add Education", f, :seeker_educations %>
                 </button>
               </div>
-
               <div class="form-group">
                 <%= f.label :category, class:"text-white" %><br />
                 <%= f.fields_for :seeker_categories do |ff| %>
                   <%= render 'shared/seeker_category', f: ff %>
                 <% end %>
               </div>
-
               <div class="form-group">
                 <%= f.label :skills, class:"text-white" %><br />
                 <%= f.fields_for :seeker_skills do |ff| %>
@@ -102,29 +99,25 @@
                 <%= f.label :certificate,"About Certificates Gained", class:"text-white" %><br />
                 <%= f.cktext_area :certificate, class:"form-control" %>
               </div>
-
               <div class="form-group">
                 <%= f.label :description,"About Me", class:"text-white"  %><br />
                 <%= f.cktext_area :description, class:"form-control" %>
 
               </div>
-
               <div class="form-group">
                 <%= f.label :photo, "Profile Photo", class: "pull-left text-white" %><br />
                 <%= f.file_field :photo,class:"form-control" %>
               </div>
-
               <div class="form-group">
                 <%= f.label :Resume, class: "pull-left text-white" %><br />
                 <%= f.file_field :attachment,class:"form-control" %>
               </div>
-
-
             <div class="actions">
               <%= f.submit "Update", class: "btn-primary"%>
             </div>
+            </div>
+          </div>
         <% end %>
-
       </div><!-- user-login -->
     </div><!-- row -->
   </div><!-- container -->

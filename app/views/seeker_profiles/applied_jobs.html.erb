@@ -5,11 +5,11 @@
 				<h3 class="text-center">Applied Jobs</h3>
 			</div>
 			<div class="tab-content">
-					<% @applied_jobs.each do |job|  %>
+        <% @applied_jobs.each do |job|  %>
 					<div class="job-ad-item shadow">
 						<div class="item-info">
 							<div class="ad-info">
-								<span class="title"><%=link_to job.job_post.job_title, job_post_path(job.job_post) %></br>
+                <span class="title"><%=link_to job.job_post.job_title, job_post_path(job.job_post) %></span></br>
 								<div class="ad-meta">
 									<ul>
 										<li><i class="fa fa-map-marker" aria-hidden="true"></i><%= job.job_post.location %></li>
@@ -20,7 +20,7 @@
 							</div><!-- ad-info -->
 						</div>
 					</div>
-					<% end %>
+        <% end %>
 			</div>
 		</div>
 	</div>

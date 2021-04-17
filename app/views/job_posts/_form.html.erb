@@ -6,7 +6,6 @@
           <% if job_post.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(job_post.errors.count, "error") %> prohibited this job_post from being saved:</h2>
-
               <ul>
               <% job_post.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -14,8 +13,6 @@
               </ul>
             </div>
           <% end %>
-
-
 
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="find-job">
@@ -71,10 +68,11 @@
                 <%= f.label :description, "Job Details", class:"text-white" %><br />
                 <%= f.cktext_area :description,class:"form-control" %>
               </div>
-
               <div class="actions">
                 <%= f.submit "Post Job", :class => 'btn-primary' %>
               </div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div><!-- row -->
