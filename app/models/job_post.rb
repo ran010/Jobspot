@@ -16,6 +16,7 @@ class JobPost < ApplicationRecord
   has_many :job_skills, dependent: :destroy
   has_many :skills, :through => :job_skills
   accepts_nested_attributes_for :job_skills
+  scope :ordered_by_created_at, -> { order(created_at: :desc) }
 
   #
   # pg_search_scope :quick_search,

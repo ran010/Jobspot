@@ -62,7 +62,6 @@ Skill.create(name:"Advising")
                               phone_no: Faker::PhoneNumber.cell_phone,
                               prefered_loc:  Faker::Address.full_address,
                               salary: rand(1000..10000),
-                              dob: Faker::Date.between(50.year.ago, 10.year.ago),
                               nationality: "Nepalese",
                               sex: "male",
                               perm_address:  Faker::Address.city,
