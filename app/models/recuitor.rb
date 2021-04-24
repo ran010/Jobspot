@@ -5,6 +5,6 @@ class Recuitor < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :recuitor_profile, dependent: :destroy
-  has_many :job_posts
-
+  has_many :job_posts,  dependent: :destroy
+  has_many :messages,  dependent: :destroy
 end

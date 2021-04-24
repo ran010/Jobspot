@@ -22,4 +22,8 @@ class SeekerProfile < ApplicationRecord
   def recommended_jobs
     JobRecommendationService.call(self)
   end
+  delegate :email, to: :seeker
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

@@ -43,19 +43,20 @@
 							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
 							<span class="fa fa-cogs"></span></button>
 							<ul class="dropdown-menu pull-right">
+								<li><%= link_to 'Message', messages_path, class: "fa fa-user" %></li>
 								<li><%= link_to 'Profile', seeker_profile_path(current_seeker.id), class: "fa fa-user" %></li>
 								<li><%= link_to 'Edit Profile', edit_seeker_profile_path(current_seeker.id), class: "fa fa-cog" %></li>
 								<li><%= link_to 'Change Password',edit_seeker_registration_path, class: "fa fa-key" %></li>
 								<li><%= link_to 'Logout',destroy_seeker_session_path, method: 'delete', class: "fa fa-sign-out" %></li>
 							</ul>
 						</div>
-
 					<% elsif recuitor_signed_in? %>
 						<div class="dropdown pull-right">
 							<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
 							<span class="fa fa-cogs"></span></button>
 							<ul class="dropdown-menu pull-right">
-								<li><%= link_to 'Profile', recuitor_profile_path(current_recuitor.id), class: "fa fa-user" %></li>
+                <li><%= link_to 'Message', messages_path, class: "fa fa-user" %></li>
+                <li><%= link_to 'Profile', recuitor_profile_path(current_recuitor.id), class: "fa fa-user" %></li>
 								<li><%= link_to 'Edit Profile', edit_recuitor_profile_path(current_recuitor.id), class: "fa fa-cog" %></li>
 								<li><%= link_to 'Change Password',edit_recuitor_registration_path, class: "fa fa-key" %></li>
 								<li><%= link_to 'Logout',destroy_recuitor_session_path, method: 'delete', class: "fa fa-sign-out" %></li>

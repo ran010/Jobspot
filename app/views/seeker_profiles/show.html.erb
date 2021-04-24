@@ -1,4 +1,4 @@
-<section class=" job-bg page  ad-profile-page">
+<section class=" job-bg page ad-profile-page">
   <div class="container">
     <div class="breadcrumb-section">
       <ol class="breadcrumb">
@@ -35,12 +35,12 @@
             <!-- <img class="img-responsive" src="images/job/resume.jpg" alt="Image"> -->
         </div>
         <div class="profile-info">
-            <h1>Full Name:- <%= @seeker_profile.first_name %> <%= @seeker_profile.last_name %></h1>
+            <h1>Full Name:- <%= @seeker_profile.full_name %></h1>
             <address>
                 <p>Address: <%= @seeker_profile.perm_address %> <br><br> Phone:<%= @seeker_profile.phone_no %><br> </p>
             </address>
             <email>
-              Email:- <%= @seeker_profile.seeker.email %>
+              Email:- <%= @seeker_profile.email %>
             </email>
         </div>
       </div><!-- profile -->
@@ -52,8 +52,7 @@
           <div class="personal-info">
             <h3>Personal Details</h3>
               <ul class="address">
-                  <li><h5>Full Name </h5> <span>:</span><%= @seeker_profile.first_name %> <%= @seeker_profile.last_name %></li>
-
+                  <li><h5>Full Name </h5> <span>:</span><%= @seeker_profile.full_name %></li>
                   <li><h5>Date of Birth </h5> <span>:</span><%= @seeker_profile.dob %></li>
                   <li><h5>Permanent Address </h5> <span>:</span><%= @seeker_profile.perm_address %></li>
                   <li><h5>Temporary Address </h5> <span>:</span><%= @seeker_profile.temp_address %></li>
@@ -61,7 +60,6 @@
                   <li><h5>Sex </h5> <span>:</span><%= @seeker_profile.sex %></li>
                   <li><h5>Preffered Job location </h5> <span>:</span><%= @seeker_profile.prefered_loc %></li>
                   <li><h5>Job Experience(years) </h5> <span>:</span><%= @seeker_profile.experience %></li>
-
               </ul>
           </div>
       </div><!-- personal-deatils -->
@@ -79,16 +77,11 @@
                 <ul>
                   <li>Passed Year: <span><%= f.year %></span> </li>
                   <li>College/School: <span><%= f.colzname %></span></li>
-
                 </ul>
               </li>
             <% end %>
           </ul>
         </div><!-- educational-background -->
-
-
-
-
       <div class="icons">
           <i class="fa fa-graduation-cap" aria-hidden="true"></i>
       </div>

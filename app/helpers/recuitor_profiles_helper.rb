@@ -1,6 +1,6 @@
 module RecuitorProfilesHelper
   def profile(id)
-    a= Seeker.find_by_id(id).seeker_profile
-    a.first_name + " " +a.last_name
+    profile = Seeker.find_by_id(id).seeker_profile
+    profile.full_name
   end
 end
