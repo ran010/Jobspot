@@ -7,6 +7,7 @@
 * System dependencies
     * elastic search
     * redis
+    * sidekiq
 * Database
     * postgresSql
 

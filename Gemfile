@@ -23,6 +23,7 @@ gem 'pg_search'
 gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'redis-rails'
+gem 'sidekiq'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'whenever', require: false
