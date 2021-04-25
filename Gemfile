@@ -20,6 +20,8 @@ gem "font-awesome-rails"
 gem 'ckeditor'
 gem 'faker'
 gem 'pg_search'
+gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
+gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'whenever', require: false

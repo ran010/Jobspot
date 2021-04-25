@@ -7,7 +7,7 @@ class SearchJobsController < ApplicationController
       @job_posts = JobPost.ordered_by_created_at.paginate(:page => params[:page],
                                                              :per_page => 10)
     else
-      @job_posts = JobPost.fuzzy_search(params[:search]).paginate(:page => params[:page],
+      @job_posts = JobPost.search(params[:search].present? ? params[:search] : "*").records.paginate(:page => params[:page],
                                                                   :per_page => 10)
     end
     @quote = QuoteApiService.call

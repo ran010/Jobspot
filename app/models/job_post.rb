@@ -1,5 +1,8 @@
 class JobPost < ApplicationRecord
-  include PgSearch
+  #include PgSearch
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   belongs_to :recuitor
 
   has_many :job_educations, dependent: :destroy
@@ -17,6 +20,36 @@ class JobPost < ApplicationRecord
   has_many :skills, :through => :job_skills
   accepts_nested_attributes_for :job_skills
   scope :ordered_by_created_at, -> { order(created_at: :desc) }
+
+  settings do
+    mappings dynamic: false do
+      indexes :job_title, type: :text
+    end
+  end
+
+  def self.search_job_title(query)
+    self.search({
+                    query: {
+                        bool: {
+                            must: [
+                                {
+                                    multi_match: {
+                                        query: query,
+                                        fields: [:job_title]
+                                    }
+                                },
+                                {
+                                    match: {
+                                        published: true
+                                    }
+                                }]
+                        }
+                    }
+                })
+  end
+
+
+
 
   #
   # pg_search_scope :quick_search,
