@@ -6,6 +6,7 @@
     * 5.1.6    
 * System dependencies
     * elastic search
+    * redis
 * Database
     * postgresSql
 
