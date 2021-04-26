@@ -16,13 +16,11 @@ window.ExportChannel.Subscribe = function(export_id, callback) {
 
     },
     received: function(data) {
-      console.log("recevied")
-
       var blob, csv_download_link;
-      blob = new Blob([data['csv_file']['content']]);
+      blob = new Blob([data['json_file']['content']]);
       csv_download_link = document.createElement('a');
       csv_download_link.href = window.URL.createObjectURL(blob);
-      csv_download_link.download = data['csv_file']['file_name'];
+      csv_download_link.download = data['json_file']['file_name'];
       csv_download_link.click();
 
       $(".export-btn").html("Export Data");

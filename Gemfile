@@ -24,6 +24,8 @@ gem 'elasticsearch-model', git: 'git://github.com/elastic/elasticsearch-rails.gi
 gem 'elasticsearch-rails', git: 'git://github.com/elastic/elasticsearch-rails.git', branch: 'master'
 gem 'redis-rails'
 gem 'sidekiq'
+gem 'active_model_serializers', '~> 0.10.0'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'whenever', require: false
@@ -35,6 +37,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'will_paginate', '~> 3.1.0'
 gem 'carrierwave'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

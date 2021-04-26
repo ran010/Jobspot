@@ -22,6 +22,7 @@
 /db/schema.rb
 /config/database.yml
 /public/uploads/*
+/public/json/*
 .byebug_history
 config/database.yml
 .idea/

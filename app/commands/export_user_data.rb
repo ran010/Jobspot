@@ -1,15 +1,5 @@
-require 'csv'
-
 class ExportUserData
-  def self.call
-    sleep 1
-
-    file = CSV.generate do |csv|
-      (1..15_000).each do |_i|
-        csv << %w[data1 data2 data3 data4 data5 data6 data7]
-      end
-    end
-
-    file
+  def self.call(seeker)
+    JSON.generate(SeekerSerializer.new(seeker).as_json)
   end
 end
