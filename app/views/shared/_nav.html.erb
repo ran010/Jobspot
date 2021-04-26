@@ -25,8 +25,12 @@
 						<% if recuitor_signed_in? %>
 							<li><%= link_to 'Posted Jobs', posted_jobs_path %></li>
 							<li><%= link_to "Post Job", new_job_post_path, :class => 'btn btn-primary fa fa-briefcase'%></li>
+
 						<% elsif seeker_signed_in?%>
 							<li><%= link_to 'Applied Jobs', applied_jobs_path %></li>
+              <div style='display: flex; justify-content: center;'>
+                <%= link_to 'Export Data', seeker_data_export_users_path, method: gets, remote: true, class: 'btn btn-primary export-btn' %>
+              </div>
 						<% else %>
 							<li><%= link_to 'Job Details',job_posts_path %></li>
 						<% end %>
@@ -47,7 +51,7 @@
 								<li><%= link_to 'Profile', seeker_profile_path(current_seeker.id), class: "fa fa-user" %></li>
 								<li><%= link_to 'Edit Profile', edit_seeker_profile_path(current_seeker.id), class: "fa fa-cog" %></li>
 								<li><%= link_to 'Change Password',edit_seeker_registration_path, class: "fa fa-key" %></li>
-								<li><%= link_to 'Logout',destroy_seeker_session_path, method: 'delete', class: "fa fa-sign-out" %></li>
+                <li><%= link_to 'Logout',destroy_seeker_session_path, method: 'delete', class: "fa fa-sign-out" %></li>
 							</ul>
 						</div>
 					<% elsif recuitor_signed_in? %>

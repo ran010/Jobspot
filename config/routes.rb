@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :users do
+    collection do
+      get :seeker_data_export, to: "users#seeker_data_export"
+      get :recuitor_data_export, to: "user#recuitor_data_export"
+    end
+  end
+
   resources :seeker_profiles
   resources :recuitor_profiles
   resources :job_posts
